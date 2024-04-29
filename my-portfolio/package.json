@@ -21,7 +21,7 @@
   },  
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build-vercel": "next vercel-build",
     "start": "next start",
     "lint": "next lint"
   },
