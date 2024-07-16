@@ -1,12 +1,8 @@
 import { XMarkIcon } from "@heroicons/react/16/solid";
-import React from "react";
+import {useState} from "react";
 
-interface Props {
-  nav: boolean;
-  CloseNav: () => void;
-}
-
-const MobileNav = ({ nav, CloseNav }: Props) => {
+const MobileNav = () => {
+  const [toggle, setToggle] = useState(false);
   const navAnimation = nav ? "translate-x-0" : "translate-x-[-100%]";
 
   return (
@@ -22,7 +18,8 @@ const MobileNav = ({ nav, CloseNav }: Props) => {
         <div className="nav-link-mobile">CONTACT</div>
       </div>
       <div
-        onClick={CloseNav}
+        onClick={()=>setToggle((prev) =>
+        !prev)}
         className="absolute z-[100000000] cursor-pointer top-[2rem] right-[2rem] w-[2rem] text-yellow-400"
       >
         <XMarkIcon />
